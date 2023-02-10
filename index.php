@@ -28,7 +28,7 @@
         <label for="opcoesGenero" class="form-label">Gênero</label>
         <br>
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="generoMasculino">Masculino</label>    
+            <label class="form-check-label" for="generoMasculino">Masculino</label>
             <input class="form-check-input" type="radio" name="genero" id="generoMasculino" value="Masculino" checked>
         </div>
 
@@ -38,12 +38,12 @@
         </div>
 
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="generoOutro">Outro</label>    
+            <label class="form-check-label" for="generoOutro">Outro</label>
             <input class="form-check-input" type="radio" name="genero" id="generoOutro" value="Outro">
         </div>
 
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="generoPrefiroNaoDizer">Prefiro não dizer</label>    
+            <label class="form-check-label" for="generoPrefiroNaoDizer">Prefiro não dizer</label>
             <input class="form-check-input" type="radio" name="genero" id="generoPrefiroNaoDizer" value="Prefiro não dizer">
         </div>
 
@@ -56,7 +56,7 @@
             <option value="bancoDados">Banco de dados</option>
             <option value="cienciaDados">Ciência de dados</option>
         </select>
-  
+
         <br>
 
         <div class="row">
@@ -67,7 +67,6 @@
 
             <div class="col-2">
                 <label for="CEP" class="form-label">CEP</label>
-                <input class="form-control" type="number" maxlength="7" minlength="7" id="cep" name="cep" placeholder="89000000">
             </div>
 
             <div class="col-3">
@@ -82,8 +81,8 @@
                     <?php
                     $estados = array('AC'=>'Acre', 'AL'=>'Alagoas', 'AP'=>'Amapá', 'AM'=>'Amazonas', 'BA'=>'Bahia', 'CE'=>'Ceará', 'DF'=>'Distrito Federal', 'ES'=>'Espírito Santo', 'GO'=>'Goiás', 'MA'=>'Maranhão', 'MT'=>'Mato Grosso', 'MS'=>'Mato Grosso do Sul', 'MG'=>'Minas Gerais', 'PA'=>'Pará', 'PB'=>'Paraíba', 'PR'=>'Paraná', 'PE'=>'Pernambuco', 'PI'=>'Piauí', 'RJ'=>'Rio de Janeiro', 'RN'=>'Rio Grande do Norte', 'RS'=>'Rio Grande do Sul', 'RO'=>'Rondônia', 'RR'=>'Roraima', 'SC'=>'Santa Catarina', 'SP'=>'São Paulo', 'SE'=>'Sergipe', 'TO'=>'Tocantins');
                     foreach ($estados as $sigla => $estado) {
-                        ?> <option value="<?php echo $sigla; ?>"><?php echo $estado; ?></option> 
-                    <?php } ?> 
+                        ?> <option value="<?php echo $sigla; ?>"><?php echo $estado; ?></option>
+                    <?php } ?>
                 </select>
             </div>
         </div> <!-- row -->
@@ -96,17 +95,17 @@
         <div class="modal fade" id="caixaConfirmacaoSalvar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja confirmar o cadastro?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Clicar em sim salva o seu cadastro.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Sim</button>
-                </div>
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja confirmar o cadastro?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Clicar em sim salva o seu cadastro.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Sim</button>
+            </div>
             </div>
         </div>
         </div>
