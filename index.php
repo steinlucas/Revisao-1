@@ -67,6 +67,7 @@
 
             <div class="col-2">
                 <label for="CEP" class="form-label">CEP</label>
+                <input class="form-control" type="number" id="cep" name="cep" placeholder="89000000" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "8">
             </div>
 
             <div class="col-3">
