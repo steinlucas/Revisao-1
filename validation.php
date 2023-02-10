@@ -23,7 +23,7 @@ function exibeRetornoValidacao() {
       
       $nome      = $_POST['nome'];
       $email     = $_POST['email'];
-      $sexo      = $_POST['sexo'];
+      $genero    = $_POST['genero'];
       $curso     = $_POST['curso'];
       $endereco  = $_POST['endereco'];
       $cep       = $_POST['cep'];
@@ -38,9 +38,9 @@ function exibeRetornoValidacao() {
         $validou = false;
         echo "E-mail não foi preenchido.<br>";
       }
-      if (empty($sexo)) {
+      if (empty($genero)) {
         $validou = false;
-        echo "Sexo não foi preenchido.<br>";
+        echo "Gênero não foi preenchido.<br>";
       }
       if (empty($curso)) {
         $validou = false;
