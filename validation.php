@@ -5,70 +5,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </head>
 <body>
-  <form class="form-control">
-    <label for="alertaRetornoValidacao" class="form-label">Dados cadastrados</label>
-      <div class="alert alert-dark" role="alert" name="alertaRetornoValidacao">
-        <?php echo exibeRetornoValidacao(); ?>
-      </div>
-  </form>
+  <br><br>
+  <div class="container">
+    <form class="form-control">
+      <label for="formValidationAlert" class="form-label">Dados cadastrados</label>
+        <div class="alert alert-dark" role="alert" name="formValidationAlert">
+          <?php echo formValidation(); ?>
+        </div>
+        <div class="alert alert-dark" role="alert" name="registerAlert">
+          <?php echo resultadoCadastro(); ?>
+        </div>
+    </form>
+  </div>
 </body>
 </html>
 
 <?php
-function exibeRetornoValidacao() {
-  $validou = true;
+
+function formValidation() {
+  $GLOBALS['requisicaoValida'] = true;
 
   if (isset($_POST['nome'])) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      
-      $nome      = $_POST['nome'];
-      $email     = $_POST['email'];
+      $GLOBALS['nome']  = $_POST['nome'];
+      $GLOBALS['email'] = $_POST['email'];
       $genero    = $_POST['genero'];
       $curso     = $_POST['curso'];
       $endereco  = $_POST['endereco'];
       $cep       = $_POST['cep'];
       $municipio = $_POST['municipio'];
       $estado    = $_POST['estado'];
-  
-      if (empty($nome)) {
-        $validou = false;
-        echo "Nome não foi preenchido.<br>";
+
+      if (empty($GLOBALS['nome'])) {
+        $GLOBALS['requisicaoValida'] = false;
+        echo "Nome completo não foi preenchido.<br>";
       }
-      if (empty($email)) {
-        $validou = false;
+      if (empty($GLOBALS['email'])) {
+        $GLOBALS['requisicaoValida'] = false;
         echo "E-mail não foi preenchido.<br>";
       }
       if (empty($genero)) {
-        $validou = false;
+        $GLOBALS['requisicaoValida'] = false;
         echo "Gênero não foi preenchido.<br>";
       }
       if (empty($curso)) {
-        $validou = false;
+        $GLOBALS['requisicaoValida'] = false;
         echo "Curso não foi preenchido.<br>";
       }
       if (empty($endereco)) {
-        $validou = false;
+        $GLOBALS['requisicaoValida'] = false;
         echo "Endereço não foi preenchido.<br>";
       }
       if (empty($cep)) {
-        $validou = false;
+        $GLOBALS['requisicaoValida'] = false;
         echo "CEP não foi preenchido.<br>";
       }
       if (empty($municipio)) {
-        $validou = false;
+        $GLOBALS['requisicaoValida'] = false;
         echo "Município não foi preenchido.<br>";
       }
       if (empty($estado)) {
-        $validou = false;
+        $GLOBALS['requisicaoValida'] = false;
         echo "Estado não foi preenchido.<br>";
       }
-    }
+    } 
+  }
+}
 
-    if ($validou){
-      return "Prezado(a) ".$nome.", seu cadastro foi realizado com sucesso! Em breve você receberá mais informações no e-mail ".$email."";
+function resultadoCadastro() {
+  if ($GLOBALS['requisicaoValida'] == true) {
+    echo "Prezado(a) ".$GLOBALS['nome'].", seu cadastro foi realizado com sucesso! Em breve você receberá mais informações no e-mail ".$GLOBALS['email']."";
+  } else {
+    if ($GLOBALS['nome'] != null) {
+      echo "Prezado(a) ".$GLOBALS['nome'].", seu cadastro foi cancelado.";
     } else {
-      return "Prezado(a) ".$nome.", seu cadastro foi cancelado.";
+      echo "Prezado(a), seu cadastro foi cancelado.";
     }
   }
 }
+
 ?>

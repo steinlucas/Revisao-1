@@ -14,12 +14,12 @@
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label">Nome completo</label>
-                <input required class="form-control" type="text" id="nome" name="nome">
+                <input class="form-control" type="text" id="nome" name="nome">
             </div>
 
             <div class="col">
                 <label for="email" class="form-label">E-mail</label>
-                <input required class="form-control" type="email" id="email" name="email" placeholder="nome@exemplo.com">
+                <input class="form-control" type="email" id="email" name="email" placeholder="nome@exemplo.com">
             </div>
         </div> <!-- row -->
 
@@ -28,38 +28,30 @@
         <label for="opcoesGenero" class="form-label">Gênero</label>
         <br>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="opcoesGenero" id="generoMasculino">
-            <label class="form-check-label" for="generoMasculino">
-                Masculino
-            </label>
+            <label class="form-check-label" for="generoMasculino">Masculino</label>    
+            <input class="form-check-input" type="radio" name="genero" id="generoMasculino" value="Masculino" checked>
         </div>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="opcoesGenero" id="generoFeminino">
-            <label class="form-check-label" for="generoFeminino">
-                Feminino
-            </label>
+            <label class="form-check-label" for="generoFeminino">Feminino</label>
+            <input class="form-check-input" type="radio" name="genero" id="generoFeminino" value="Feminino">
         </div>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="opcoesGenero" id="generoOutro">
-            <label class="form-check-label" for="generoOutro">
-                Outro
-            </label>
+            <label class="form-check-label" for="generoOutro">Outro</label>    
+            <input class="form-check-input" type="radio" name="genero" id="generoOutro" value="Outro">
         </div>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="opcoesGenero" id="generoPrefiroNaoDizer">
-            <label class="form-check-label" for="generoPrefiroNaoDizer">
-                Prefiro não dizer
-            </label>
+            <label class="form-check-label" for="generoPrefiroNaoDizer">Prefiro não dizer</label>    
+            <input class="form-check-input" type="radio" name="genero" id="generoPrefiroNaoDizer" value="Prefiro não dizer">
         </div>
 
         <br><br>
 
         <label for="curso" class="form-label">Curso</label>
-        <select required class="form-control" name="curso">
-            <option selected disabled value="">Escolha...</option>
+        <select class="form-control" name="curso">
+            <option selected value="">Escolha...</option>
             <option value="programadorWeb">Programador Web</option>
             <option value="bancoDados">Banco de dados</option>
             <option value="cienciaDados">Ciência de dados</option>
@@ -70,23 +62,23 @@
         <div class="row">
             <div class="col">
                 <label for="endereco" class="form-label">Endereço</label>
-                <input required class="form-control" type="text" id="endereco" name="endereco">
+                <input class="form-control" type="text" id="endereco" name="endereco">
             </div>
 
             <div class="col-2">
                 <label for="CEP" class="form-label">CEP</label>
-                <input required class="form-control" type="number" maxlength="7" minlength="7" id="cep" name="cep" placeholder="89000000">
+                <input class="form-control" type="number" maxlength="7" minlength="7" id="cep" name="cep" placeholder="89000000">
             </div>
 
             <div class="col-3">
                 <label for="municipio" class="form-label">Município</label>
-                <input required class="form-control" type="text" id="municipio" name="municipio">
+                <input class="form-control" type="text" id="municipio" name="municipio">
             </div>
 
             <div class="col-3">
                 <label for="estado" class="form-label">Estado</label>
-                <select required class="form-control" name="estado">
-                    <option selected disabled value="">Escolha...</option>
+                <select class="form-control" name="estado">
+                    <option selected value="">Escolha...</option>
                     <?php
                     $estados = array('AC'=>'Acre', 'AL'=>'Alagoas', 'AP'=>'Amapá', 'AM'=>'Amazonas', 'BA'=>'Bahia', 'CE'=>'Ceará', 'DF'=>'Distrito Federal', 'ES'=>'Espírito Santo', 'GO'=>'Goiás', 'MA'=>'Maranhão', 'MT'=>'Mato Grosso', 'MS'=>'Mato Grosso do Sul', 'MG'=>'Minas Gerais', 'PA'=>'Pará', 'PB'=>'Paraíba', 'PR'=>'Paraná', 'PE'=>'Pernambuco', 'PI'=>'Piauí', 'RJ'=>'Rio de Janeiro', 'RN'=>'Rio Grande do Norte', 'RS'=>'Rio Grande do Sul', 'RO'=>'Rondônia', 'RR'=>'Roraima', 'SC'=>'Santa Catarina', 'SP'=>'São Paulo', 'SE'=>'Sergipe', 'TO'=>'Tocantins');
                     foreach ($estados as $sigla => $estado) {
