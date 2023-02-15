@@ -68,9 +68,9 @@ function formValidation() {
         $GLOBALS['requisicaoValida'] = false;
         echo "Estado não foi preenchido.<br>";
       }
-    }
-    if ($GLOBALS['requisicaoValida'] == true){
-      echo "Todos os campos foram preenchidos.";
+      if ($GLOBALS['requisicaoValida'] == true){
+        echo "Todos os campos foram preenchidos.";
+      }
     }
   }
 }
